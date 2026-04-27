@@ -1,20 +1,24 @@
-en-content = `
+// Use underscores or camelCase instead of hyphens
+let enContent = `
 <button class='ceh-translate-button' onclick='translateAll()'>Cetlennen hipu shid̃a boco? Kad̃e shid̃a benci.</button>
 <h1>Hi! This is my site!</h1>
-`
-ceh-content = `
+`;
+
+let cehContent = `
 <button class='ceh-translate-button' onclick='translateAll()'>Do you speak English? Click here.</button>
 <h1>Had̃a!</h1>
-`
-clang = 'en'
+`;
+
+let clang = 'en';
+
 function translateAll() {
-  if (clang == 'en') {
-    content = document.getElementById('code-to-translate')
-    content.innerHTML = ceh-content
-    clang = 'ceh'
-  } else if (clang == 'ceh') {
-    content = document.getElementById('code-to-translate')
-    content.innerHTML = en-content
-    clang = 'en'
+  const contentDiv = document.getElementById('code-to-translate');
+  
+  if (clang === 'en') {
+    contentDiv.innerHTML = cehContent;
+    clang = 'ceh';
+  } else {
+    contentDiv.innerHTML = enContent;
+    clang = 'en';
   }
 }
