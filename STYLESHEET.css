@@ -2,6 +2,9 @@ body {
   background-color: #7225e6;
   font-family: "Brush Script MT", Copperplate, Verdana, "Lucida Console", monospace
 }
+.link-clicking-section {
+  outline: 4px;
+}
 button {
   background-color: #1e3e70;
   color: #ffffff;
