@@ -4,5 +4,5 @@ if (mpxa == null) {
     document.getElementById("MPXADATA").innerHTML = "<meta http-equiv=\"refresh\" content=\"0; url='/mpxa/create'\">"
   };
 };
-if (!(document.getElementById("CAUSERNAME") == null)) {
+function createMpxAccount()
   mpxa = {username: document.getElementById("CAUSERNAME").value(), country: document.getElementById("CACOUNTRY").value(), totalXp: 0, xS: 10, otherData: {}};
