@@ -7,6 +7,12 @@ let enContent = `
   <a href='https://scratch.mit.edu/users/Meower-Pro'><button>Scratch profile</button></a>
   <a href='https://conworkshop.com/view_language.php?l=CEHP'><button>Latin Catlanian page</button></a>
 </section>
+<div style="background-color: black; color: white;">
+  <h3>News</h3><br>
+    <h5>Coming Soon: Accounts</h5><br>
+    <p>Accounts in MPOW are coming soon! We are estimated to finish on May 25, 2026.</p><br>
+    <p>Have fun with the accounts, and the Portal of Secrets coming soon!</p><br>
+</div>
 `;
 
 let cehContent = `
@@ -17,6 +23,12 @@ let cehContent = `
   <a href='https://scratch.mit.edu/users/Meower-Pro'><button>Lona o Scratch</button></a>
   <a href='https://conworkshop.com/view_language.php?l=CEHP'><button>Lona o cetlennen hipu</button></a>
 </section>
+<div style="background-color: black; color: white;">
+  <h3>INIMA AD̃E!</h3><br>
+    <h5>INIMA AD̃E!</h5><br>
+    <p>INIMA AD̃E!</p><br>
+    <p>INIMA AD̃E!</p><br>
+</div>
 `;
 
 let clang = 'en';
