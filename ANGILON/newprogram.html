@@ -2,13 +2,19 @@
 <html>
   <span id="R">Loading editor...</span>
   <script>
+    // 1. Fetch string and parse it into a real JavaScript array
     let myProjects = localStorage.getItem("angilonStored_projects");
-    if (myProjects == null) {
-      myProjects = [];
-    }
+    myProjects = myProjects ? JSON.parse(myProjects) : [];
+
     const newProject_uuid = crypto.randomUUID();
+    
+    // 2. Add the new project to the array
     myProjects = [...myProjects, {filename: "new_project.aglnp", id: newProject_uuid, version: 1, code: ""}];
-    localStorage.setItem("angilonStored_projects");
-    document.getElementById("R").innerHTML = `<meta http-equiv="refresh" content="0; url=/ANGILON/?editor=${newProject_uuid}">`;
+    
+    // 3. Convert the array back to a string and save it safely
+    localStorage.setItem("angilonStored_projects", JSON.stringify(myProjects));
+    
+    // 4. Use window.location for a reliable, fast redirect
+    window.location.href = `/ANGILON/?editor=${newProject_uuid}`;
   </script>
 </html>
