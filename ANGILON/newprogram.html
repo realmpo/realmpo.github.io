@@ -7,7 +7,7 @@
       myProjects = [];
     }
     const newProject_uuid = crypto.randomUUID();
-    myProjects = [...myProjects, {filename: "new_project.aglnp", id: uuid, version: 1, code: ""}];
+    myProjects = [...myProjects, {filename: "new_project.aglnp", id: newProject_uuid, version: 1, code: ""}];
     localStorage.setItem("angilonStored_projects");
     document.getElementById("R").innerHTML = `<meta http-equiv="refresh" content="0; url=/ANGILON/?editor=${newProject_uuid}">`;
   </script>
