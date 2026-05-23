@@ -1,8 +1,10 @@
 mpxa = localStorage.getItem("MPX ACCOUNT");
 if (mpxa == null) {
-  if (!(document.getElementById("MPXADATA") == null)) {
-    document.getElementById("MPXADATA").innerHTML = "<meta http-equiv=\"refresh\" content=\"0; url='/mpxa/create'\">"
+  if (document.getElementById("MPXADATA") == null) {
+    window.location.href = `/mpxa/create`;
   };
 };
-function createMpxAccount()
-  mpxa = {username: document.getElementById("CAUSERNAME").value(), country: document.getElementById("CACOUNTRY").value(), totalXp: 0, xS: 10, otherData: {}};
+function createMpxAccount() {
+  mpxa = {username: document.getElementById("CAUSERNAME").value(), country: document.getElementById("CACOUNTRY").value(), country: document.getElementById("CAPASSWORD"), totalXp: 0, xS: 10, otherData: {}};
+  window.location.href = `/mpxa/`;
+}
