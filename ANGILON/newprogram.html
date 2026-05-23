@@ -4,11 +4,11 @@
   <script>
     let myProjects = localStorage.getItem("angilonStored_projects");
     if (myProjects == null) {
-      myProjects = []
+      myProjects = [];
     }
     const newProject_uuid = crypto.randomUUID();
-    myProjects = [...myProjects, {filename: "new_project.aglnp", id: uuid, version: 1, code: ""}]
-    localStorage.setItem("angilonStored_projects")
-    document.getElementById("R").innerHTML = `<meta http-equiv="refresh" content="0; url=/ANGILON/?editor=${newProject_uuid}">`
+    myProjects = [...myProjects, {filename: "new_project.aglnp", id: uuid, version: 1, code: ""}];
+    localStorage.setItem("angilonStored_projects");
+    document.getElementById("R").innerHTML = `<meta http-equiv="refresh" content="0; url=/ANGILON/?editor=${newProject_uuid}">`;
   </script>
 </html>
