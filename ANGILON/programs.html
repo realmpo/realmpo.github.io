@@ -9,5 +9,18 @@
     <h1><img src="/ANGILON/angilon_logo_official.png" width="60px">ANGILON</h1>
     <h2>Your Programs</h2>
     <h4>Loaded <span id="num-programs">...</span> programs.</h4>
+    <div id="programs"></div>
+    <script>
+      let div = document.getElementById("programs")
+      document.getElementById("num-programs").innerHTML = 0
+      let myPrograms = json.parse(localStorage.getItem("angilonStored_projects"))
+      if (localStorage.getItem("angilonStored_programs") == null) {
+        div.innerHTML = "<h3>You have no programs! <a href=\"newprogram\">Make a new program</a> to start.</h3>"
+        
+      } else {
+
+      }
+
+    </script>
   </body>
   </html>

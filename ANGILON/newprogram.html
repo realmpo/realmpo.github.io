@@ -3,18 +3,18 @@
   <span id="R">Loading editor...</span>
   <script>
     // 1. Fetch string and parse it into a real JavaScript array
-    let myProjects = localStorage.getItem("angilonStored_projects");
-    myProjects = myProjects ? JSON.parse(myProjects) : [];
+    let myPrograms = localStorage.getItem("angilonStored_Programs");
+    myPrograms = myPrograms ? JSON.parse(myPrograms) : [];
 
-    const newProject_uuid = crypto.randomUUID();
+    const newProgram_uuid = crypto.randomUUID();
     
-    // 2. Add the new project to the array
-    myProjects = [...myProjects, {filename: "new_project.aglnp", id: newProject_uuid, version: 1, code: ""}];
+    // 2. Add the new program to the array
+    myPrograms = [...myPrograms, {filename: "new_program.aglnp", id: newProgram_uuid, version: 1, code: ""}];
     
     // 3. Convert the array back to a string and save it safely
-    localStorage.setItem("angilonStored_projects", JSON.stringify(myProjects));
+    localStorage.setItem("angilonStored_programs", JSON.stringify(myPrograms));
     
     // 4. Use window.location for a reliable, fast redirect
-    window.location.href = `/ANGILON/?editor=${newProject_uuid}`;
+    window.location.href = `/ANGILON/?editor=${newProgram_uuid}`;
   </script>
 </html>
