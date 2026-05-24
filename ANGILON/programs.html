@@ -1,26 +1,73 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="icon" type="image/x-icon" href="/ANGILON/angilon_logo_official.png">
-    <title>My Program - Angilon</title>
-    <link rel="stylesheet" href="/STYLESHEET.css">
+   <head>
+   <link rel="icon" type="image/x-icon" href="/ANGILON/angilon_logo_official.png">
+    <title>My Programs -Angilon</title>
+    <link rel="stylesheet"href="/STYLESHEET.css">
   </head>
   <body>
     <h1><img src="/ANGILON/angilon_logo_official.png" width="60px">ANGILON</h1>
     <h2>Your Programs</h2>
-    <h4>Loaded <span id="num-programs">...</span> programs.</h4>
+    <h4>Loaded <spanid="num-programs">...</span>programs.</h4>
     <div id="programs"></div>
     <script>
-      let div = document.getElementById("programs")
-      document.getElementById("num-programs").innerHTML = 0
-      let myPrograms = json.parse(localStorage.getItem("angilonStored_projects"))
-      if (localStorage.getItem("angilonStored_programs") == null) {
-        div.innerHTML = "<h3>You have no programs! <a href=\"newprogram\">Make a new program</a> to start.</h3>"
-        
-      } else {
+    function formatRelativeDate(targetTimestamp,locale= 'en-US') {
+      const now = Date.now();
+      const targetDate = new Date(targetTimestamp);
+      const diffInMs = now - targetTimestamp;
 
+      // Millisecond thresholds
+      const oneMinuteInMs = 60000;
+      const oneHourInMs = 3600000;
+      const twentyFourHoursInMs = 86400000;
+      const sevenDaysInMs = 604800000;
+
+      // Initialize thenativerelativetimeformatter
+      const rtf = new Intl.RelativeTimeFormat(locale,{ numeric: 'always' });
+
+      // 1. Under1 minute
+      if (diffInMs >= 0 && diffInMs < oneMinuteInMs){
+      // Custom hardcoded phrases for "This minute" per language if needed,
+      // fallback to native relative mapping.
+      return locale.startsWith('en')? "This minute" :rtf.format(0, 'minute');
       }
 
-    </script>
+      // 2. Under 60 minutes
+       if (diffInMs >= oneMinuteInMs && diffInMs < oneHourInMs){
+      const minutes =Math.floor(diffInMs /oneMinuteInMs);
+      return rtf.format(-minutes, 'minute'); 
+      // Outputs: "X minutes ago"/ "il y a X minutes" /"hace X minutos"
+      };
+
+      // 3. Under 24 hours
+      if (diffInMs >= oneHourInMs && diffInMs < twentyFourHoursInMs){
+      const hours =Math.floor(diffInMs /oneHourInMs);
+      return rtf.format(-hours, 'hour');
+      // Outputs: "X hours ago"/ "il y a X heures"/ "hace X horas"
+      };
+
+      // 4. Under 7 days (Full weekday name)
+      if (diffInMs>=twentyFourHoursInMs && diffInMs <sevenDaysInMs){
+      const dayOptions= {weekday:'long'};
+      return newIntl.DateTimeFormat(locale, dayOptions).format(targetDate);
+      // Outputs: "Thursday" /"jeudi" /"jueves"
+      };
+
+      // 5. 7+ days ago(Full standard fallback format)
+            const dateOptions ={ month: 'short', day: '2-digit', year:'numeric' };
+            return newIntl.DateTimeFormat(locale, dateOptions).format(targetDate).replace(',', '');
+     };
+
+          let div = document.getElementById("programs");
+          document.getElementById("num-programs").innerHTML = 0;
+          let myPrograms = JSON.parse(localStorage.getItem("angilonStored_programs"));
+          if (localStorage.getItem("angilonStored_programs")==null) {
+            div.innerHTML = "<h3>You have no programs! <a href=\"newprogram\">Make a new program</a> to start.</h3>";
+            myPrograms = [];
+          } else {
+            div.innerHTML = div.innerHTML + `<div class="angilonSelect_program_box"><h3>${myPrograms.filename}</h3><br><p>Created: ${formatRelativeDate((Date.now()- myPrograms.created), navigator.language)}</p><br><p>Modified: ${formatRelativeDate((Date.now() -myPrograms.lastUpdated), navigator.language)}</p><br><button>Edit</button></div>`
+          };
+
+        </script>
   </body>
-  </html>
+</html>
