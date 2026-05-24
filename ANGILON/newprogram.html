@@ -9,7 +9,7 @@
     const newProgram_uuid = crypto.randomUUID();
     
     // 2. Add the new program to the array
-    myPrograms = [...myPrograms, {filename: "new_program.aglnp", id: newProgram_uuid, version: 1, code: ""}];
+    myPrograms = [...myPrograms, {filename: "new_program.agl", id: newProgram_uuid, version: 1, code: "", created: Date.now(), lastUpdated: Date.now()}];
     
     // 3. Convert the array back to a string and save it safely
     localStorage.setItem("angilonStored_programs", JSON.stringify(myPrograms));
