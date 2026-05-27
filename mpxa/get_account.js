@@ -20,37 +20,61 @@ function createMpxAccount() {
 
       reader.readAsDataURL(file);
   });
-const PROJECT_REF = "rrxxnrhjdfkkzkggyuby";
-const ANON_KEY = "sb_publishable_8otqa5vZveDxDRa..."; // Use your actual full key
-const TABLE_NAME = "profiles"; // Replace with your actual table name
+    const PROJECT_REF = "rrxxnrhjdfkkzkggyuby";
+    const ANON_KEY = "sb_publishable_8otqa5vZveDxDRaVCV1wOg_i3A5sVPI"; // Ensure this is your full key
+    const TABLE_NAME = "Meower-ProX Accounts (MAIN)"; // Replace with your exact table name if different
 
-  document.getElementById('profileForm').addEventListener('submit', async (e) => {
-    e.preventDefault();
+    document.getElementById('registrationForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
 
-    const username = document.getElementById('username').value;
-    const bio = document.getElementById('bio').value;
+      const username = document.getElementById('CAUSERNAME').value;
+      const display_name = document.getElementById('CADNAME').value;
+      const password = document.getElementById('CAPASSWORD').value;
 
-    try {
-      const response = await fetch(`https://${PROJECT_REF}.supabase.co/rest/v1/${TABLE_NAME}`, {
-        method: "POST",
-        headers: {
-          "apikey": ANON_KEY,
-          "Authorization": `Bearer ${ANON_KEY}`,
-          "Content-Type": "application/json",
-          "Prefer": "return=representation" // Tells Supabase to return the inserted data
-        },
-        body: JSON.stringify({ username, bio })
-      });
+      // 1. Grab the value from your form input
+      const profilePicInput = document.getElementById('CAPFP').value.trim();
 
-      const data = await response.json();
+      // 2. Build your base required payload
+      const payload = {
+        username: username,
+        display_name: display_name,
+        password: password
+      };
 
-      if (!response.ok) throw new Error(data.message || "Failed to insert data");
+      // 3. Only append the property if the user actually provided a custom value
+      if (profilePicInput !== "") {
+        payload.profile_picture = profilePicInput;
+      }
 
-      alert("User data added successfully!");
-      console.log(data);
-    } catch (error) {
-      alert("RLS Error or Request Failed: " + error.message);
-    }
-  });
+      // If profilePicInput is empty, payload.profile_picture stays undefined.
+      // Supabase will see the column is missing and apply your default link automatically!
+
+      try {
+        const response = await fetch(`https://${PROJECT_REF}.supabase.co/rest/v1/${TABLE_NAME}`, {
+          method: "POST",
+          headers: {
+            "apikey": ANON_KEY,
+            "Authorization": `Bearer ${ANON_KEY}`,
+            "Content-Type": "application/json",
+            "Prefer": "return=representation"
+          },
+          body: JSON.stringify(payload)
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+          throw new Error(data.message || "Database insert failed");
+        }
+
+        alert("User successfully added!");
+        console.log("Created Row Data:", data);
+        document.getElementById('registrationForm').reset();
+
+      } catch (error) {
+        alert("Error adding user: " + error.message);
+        console.error("Full error details:", error);
+      }
+    });
   window.location.href = `/mpxa/`;
 }
