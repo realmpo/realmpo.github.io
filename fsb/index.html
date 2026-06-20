@@ -1,14 +1,84 @@
-<html>
-  <head>
-    <title>Fire Spelling Bee - Homepage</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <header>
-      <img src="/fsb/logo.png" width="20%">
-    </header>
-    <header>
-      <h1>Fire Spelling Bee</h1>
-    </header>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bee Theme Parallax</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            /* Yellow fallback color */
+            background-color: #E2EC11; 
+        }
+
+        /* 1. Create a fixed container for your repeating bee image */
+        .parallax-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            /* Make it taller than the screen so it has room to scroll down */
+            height: 150%; 
+            background-image: url('your-bee-image.jpg');
+            background-repeat: repeat;
+            background-size: auto;
+            background-position: top left;
+            /* Places the background safely behind your website content */
+            z-index: -1; 
+            /* Ensures smooth hardware-accelerated rendering */
+            will-change: transform; 
+        }
+
+        /* 2. Style your website content layer */
+        .content {
+            position: relative;
+            z-index: 1;
+            padding: 50px;
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.9); /* Semi-transparent white box */
+            border-radius: 8px;
+        }
+
+        /* Dummy class to create height so you can test the scroll */
+        .spacer {
+            height: 2000px; 
+        }
+    </style>
+</head>
+<body>
+
+    <!-- This div holds your repeating bee pattern -->
+    <div class="parallax-bg" id="beeBackground"></div>
+
+    <!-- This div holds all your visible text, images, and links -->
+    <div class="content">
+        <h1>🍯 Welcome to the Hive</h1>
+        <p>Scroll down to see the honeycomb background move at a slower pace!</p>
+        <div class="spacer"></div>
+    </div>
+
+    <!-- 3. JavaScript to calculate and apply the 80% scroll speed -->
+    <script>
+        const bg = document.getElementById('beeBackground');
+
+        window.addEventListener('scroll', () => {
+            // Get the current distance scrolled from the top
+            let scrolled = window.pageYOffset;
+            
+            /* 
+               To make it move at 80% of the page speed, we shift it 
+               UPWARD by 20% of the scroll distance (100% - 80% = 20%).
+               This creates the visual illusion of moving 20% slower.
+            */
+            let yPos = -(scrolled * 0.2);
+            
+            // Apply the movement smoothly using 3D transforms
+            bg.style.transform = `translate3d(0, ${yPos}px, 0)`;
+        });
+    </script>
+
+</body>
 </html>
