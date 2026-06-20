@@ -47,7 +47,7 @@
                Rounding it with Math.floor() prevents pixel flickering 
                and keeps the background pattern crisp as it moves.
             */
-            let yPos = Math.floor(-(scrolled * 0.2));
+            let yPos = Math.floor(-(scrolled * 0.09));
             
             // Instantly apply the slow scroll to the body background
             document.body.style.backgroundPosition = `0px ${yPos}px`;
