@@ -38,15 +38,17 @@
     <!-- 3. Optimized JavaScript tracking background position changes -->
     <script>
         window.addEventListener('scroll', () => {
+            // Get current scroll distance
             let scrolled = window.pageYOffset;
             
             /* 
-               Moves the tile coordinate upward by 20% of the total scroll distance. 
-               This forces the pattern to loop continuously down the infinite grid.
+               Calculate the slower speed. 
+               Rounding it with Math.floor() prevents pixel flickering 
+               and keeps the background pattern crisp as it moves.
             */
-            let yPos = -(scrolled * 0.2);
+            let yPos = Math.floor(-(scrolled * 0.2));
             
-            // Alter the background offset coordinate dynamically
+            // Instantly apply the slow scroll to the body background
             document.body.style.backgroundPosition = `0px ${yPos}px`;
         });
     </script>
