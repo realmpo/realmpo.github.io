@@ -22,6 +22,37 @@
         .spacer {
             height: 30000px; 
         }
+        
+        .vertical-hive {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hive-item {
+            /* 1. CHANGE CSS DIMENSIONS HERE */
+            width: 120px;   /* Match your image width */
+            height: 104px;  /* Match your image height */
+        }
+
+        /* 2. CHANGE THE NEGATIVE MARGIN HERE TO SNAP THEM TOGETHER */
+        .hive-item + .hive-item {
+            margin-top: -15px; /* Adjust this value until the yellow seams blend perfectly */
+        }
+
+        .hex-wrapper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .hex-clickable {
+            cursor: pointer;
+            transition: transform 0.2s;
+            transform-origin: center;
+        }
+        .hex-clickable:hover {
+            transform: scale(1.05);
+        }
     </style>
 </head>
 <body>
