@@ -9,36 +9,51 @@
             margin: 0;
             padding: 0;
             font-family: "Brush Script MT", "Brush Script Std", "Comic Sans MS", cursive;
-            
-            /* 1. Setup the infinite background tiling directly on the body */
             background-image: url('/fsb/fsb_background.png');
-            background-repeat: repeat; /* Tiles infinitely in all directions */
-            background-size: auto; /* Keeps the honeycomb shapes true to size */
-            background-position: 0px 0px; /* Starting position */
+            background-repeat: repeat; 
+            background-size: auto; 
+            background-position: 0px 0px; 
             background-color: #eaff00;
             background-attachment: fixed;
         }
-        /* Test spacer to enable long scrolling */
+
         .spacer {
             height: 30000px; 
         }
-        
-        /* FIXED: Changed selector name to match your HTML container class */
+
+        /* 1. FLEX CONTEXT: Main structural column wrapper */
         .beehive-grid {
             display: flex;
             flex-direction: column;
             align-items: center;
+            margin-top: 50px;
         }
 
+        /* 2. FLEX ROW SYSTEM: Safely groups 5 buttons per line */
+        .hive-row {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            height: 156px; /* Total height of the staggered row height block */
+            margin-bottom: -52px; /* Pulls the NEXT row upward to interlock perfectly */
+        }
+
+        /* 3. INDIVIDUAL CELL: Pulls elements side-by-side with a negative left margin */
         .hive-item {
             position: relative;
-            width: 120px;   /* Match your image width */
-            height: 104px;  /* Match your image height */
+            width: 120px;   
+            height: 104px;  
         }
 
-        /* FIXED: Mathematical snapping margin for 120x104 flat-top hexagons */
+        /* Pulls buttons together horizontally to link the side teeth */
         .hive-item + .hive-item {
-            margin-top: -26px; 
+            margin-left: -30px; 
+        }
+
+        /* 4. THE ZIG-ZAG MATH: Modulo shifts the 2nd and 4th element down inside EVERY row */
+        .hive-row .hive-item:nth-child(2),
+        .hive-row .hive-item:nth-child(4) {
+            transform: translateY(52px); /* Exactly half the button height */
         }
 
         .hex-wrapper {
@@ -49,72 +64,98 @@
 
         .hex-clickable {
             cursor: pointer;
-            transition: transform 0.2s;
+            transition: transform 0.2s, filter 0.2s;
             transform-origin: center;
         }
+
         .hex-clickable:hover {
             transform: scale(1.05);
             filter: brightness(1.1);
+            position: relative;
+            z-index: 10; /* Ensures the hovered button pops above neighbors cleanly */
         }
     </style>
 </head>
 <body>
 
     <div class="content">
-      <header>
+      <header style="text-align: center;">
         <img src="/fsb/logo.png" width="20%">
       </header>
-      <h1>Fire Spelling Bee</h1>
+      <h1 style="text-align: center;">Fire Spelling Bee</h1>
       
     <div class="beehive-grid">
-        <!-- FIXED: Replaced all SVGs with corrected namespaces, viewboxes, and flat-top polygon coordinates -->
-        <!-- Button 1 -->
-        <div class="hive-item">
-            <svg class="hex-wrapper" viewBox="0 0 100 86.6" xmlns="http://w3.org">
-                <defs>
-                    <pattern id="png-1" width="1" height="1" viewBox="0 0 100 86.6" preserveAspectRatio="xMidYMid slice">
-                        <image href="/fsb/practice-button.png" width="100" height="86.6" />
+        
+        <!-- ROW 1 (Holds exactly 5 buttons) -->
+        <div class="hive-row">
+            <div class="hive-item">
+                <svg class="hex-wrapper" viewBox="0 0 100 86.6" xmlns="http://w3.org">
+                    <defs>
+                        <pattern id="png-1" width="1" height="1" viewBox="0 0 100 86.6" preserveAspectRatio="xMidYMid slice">
+                            <image href="/fsb/practice-button.png" width="100" height="86.6" />
+                        </pattern>
+                    </defs>
+                    <polygon class="hex-clickable data-btn" data-id="1" points="25,0 75,0 100,43.3 75,86.6 25,86.6 0,43.3" fill="url(#png-1)" />
+                </svg>
+            </div>
+            <div class="hive-item">
+                <svg class="hex-wrapper" viewBox="0 0 100 86.6" xmlns="http://w3.org">
+                    <defs>
+                        <pattern id="png-2" width="1" height="1" viewBox="0 0 100 86.6" preserveAspectRatio="xMidYMid slice">
+                            <image href="your-button-2.png" width="100" height="86.6" />
                     </pattern>
                 </defs>
-                <polygon class="hex-clickable data-btn" data-id="1" points="25,0 75,0 100,43.3 75,86.6 25,86.6 0,43.3" fill="url(#png-1)" />
-            </svg>
+                    <polygon class="hex-clickable data-btn" data-id="2" points="25,0 75,0 100,43.3 75,86.6 25,86.6 0,43.3" fill="url(#png-2)" />
+                </svg>
+            </div>
+            <div class="hive-item">
+                <svg class="hex-wrapper" viewBox="0 0 100 86.6" xmlns="http://w3.org">
+                    <defs>
+                        <pattern id="png-2" width="1" height="1" viewBox="0 0 100 86.6" preserveAspectRatio="xMidYMid slice">
+                            <image href="your-button-2.png" width="100" height="86.6" />
+                    </pattern>
+                </defs>
+                    <polygon class="hex-clickable data-btn" data-id="2" points="25,0 75,0 100,43.3 75,86.6 25,86.6 0,43.3" fill="url(#png-2)" />
+                </svg>
+            </div>
+            <div class="hive-item">
+                <svg class="hex-wrapper" viewBox="0 0 100 86.6" xmlns="http://w3.org">
+                    <defs>
+                        <pattern id="png-2" width="1" height="1" viewBox="0 0 100 86.6" preserveAspectRatio="xMidYMid slice">
+                            <image href="your-button-2.png" width="100" height="86.6" />
+                    </pattern>
+                </defs>
+                    <polygon class="hex-clickable data-btn" data-id="2" points="25,0 75,0 100,43.3 75,86.6 25,86.6 0,43.3" fill="url(#png-2)" />
+                </svg>
+            </div>
+            </div>
+            <div class="hive-item">
+                <svg class="hex-wrapper" viewBox="0 0 100 86.6" xmlns="http://w3.org">
+                    <defs>
+                        <pattern id="png-1" width="1" height="1" viewBox="0 0 100 86.6" preserveAspectRatio="xMidYMid slice">
+                            <image href="/fsb/practice-button.png" width="100" height="86.6" />
+                        </pattern>
+                    </defs>
+                    <polygon class="hex-clickable data-btn" data-id="1" points="25,0 75,0 100,43.3 75,86.6 25,86.6 0,43.3" fill="url(#png-1)" />
+                </svg>
+            </div>
         </div>
 
-        <!-- Button 2 -->
-        <div class="hive-item">
-            <svg class="hex-wrapper" viewBox="0 0 100 86.6" xmlns="http://w3.org">
-                <defs>
-                    <pattern id="png-2" width="1" height="1" viewBox="0 0 100 86.6" preserveAspectRatio="xMidYMid slice">
-                        <image href="your-button-2.png" width="100" height="86.6" />
-                    </pattern>
-                </defs>
-                <polygon class="hex-clickable data-btn" data-id="2" points="25,0 75,0 100,43.3 75,86.6 25,86.6 0,43.3" fill="url(#png-2)" />
-            </svg>
+        <!-- ROW 2 (Duplicate safe! Put any remaining buttons here) -->
+        <div class="hive-row">
+            <div class="hive-item">
+                <svg class="hex-wrapper" viewBox="0 0 100 86.6" xmlns="http://w3.org">
+                    <defs>
+                        <pattern id="png-6" width="1" height="1" viewBox="0 0 100 86.6" preserveAspectRatio="xMidYMid slice">
+                            <image href="your-button-6.png" width="100" height="86.6" />
+                        </pattern>
+                    </defs>
+                    <polygon class="hex-clickable data-btn" data-id="6" points="25,0 75,0 100,43.3 75,86.6 25,86.6 0,43.3" fill="url(#png-6)" />
+                </svg>
+            </div>
+            <!-- You can add button 7, 8, 9, 10 here safely. When you want row 3, open a new <div class="hive-row"> block. -->
         </div>
 
-        <!-- Button 3 -->
-        <div class="hive-item">
-            <svg class="hex-wrapper" viewBox="0 0 100 86.6" xmlns="http://w3.org">
-                <defs>
-                    <pattern id="png-3" width="1" height="1" viewBox="0 0 100 86.6" preserveAspectRatio="xMidYMid slice">
-                        <image href="your-button-3.png" width="100" height="86.6" />
-                    </pattern>
-                </defs>
-                <polygon class="hex-clickable data-btn" data-id="3" points="25,0 75,0 100,43.3 75,86.6 25,86.6 0,43.3" fill="url(#png-3)" />
-            </svg>
-        </div>
-
-        <!-- Button 4 -->
-        <div class="hive-item">
-            <svg class="hex-wrapper" viewBox="0 0 100 86.6" xmlns="http://w3.org">
-                <defs>
-                    <pattern id="png-4" width="1" height="1" viewBox="0 0 100 86.6" preserveAspectRatio="xMidYMid slice">
-                        <image href="your-button-4.png" width="100" height="86.6" />
-                    </pattern>
-                </defs>
-                <polygon class="hex-clickable data-btn" data-id="4" points="25,0 75,0 100,43.3 75,86.6 25,86.6 0,43.3" fill="url(#png-4)" />
-            </svg>
-        </div>
     </div>
 
     <div class="spacer"></div>
