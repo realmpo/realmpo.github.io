@@ -74,6 +74,9 @@
             position: relative;
             z-index: 10; /* Ensures the hovered button pops above neighbors cleanly */
         }
+        button {
+          background-color = #e34424;
+        }
     </style>
 </head>
 <body>
@@ -180,7 +183,7 @@
     </script>
 
 <script>
-<!-- 1. Load the global Supabase bundle (non-module version) -->
+// 1. Load the global Supabase bundle (non-module version)
  // 1. Enter your Supabase credentials exactly as they appear in your dashboard
     var supabaseUrl = 'https://rgzympbrwrttbrioafjd.supabase.co'; // e.g., 'https://xyzcompany.supabase.co'
     var supabaseKey = 'sb_publishable_KBQTvKhl5HFq9zwpqbCK5Q_7um8h8t-';
@@ -221,6 +224,12 @@
 
     // Run the function immediately when the script executes
     loadData();
+  </script>
+  <script>
+    loggedInAccount = localStorage.getItem("loggedInAccount")
+    if (loggedInAccount == null) {
+        document.querySelector(".beehive-grid").innerHTML = "<a href=\"login\"><button>Log In</button></a><br><a href=\"Signup\"><button>Sign Up</button></a>"
+    }
   </script>
 
 
