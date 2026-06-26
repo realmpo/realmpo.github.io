@@ -14,6 +14,19 @@
       <button class='ceh-translate-button' onclick='translateAll()'>Cetlennen hipu shid̃a boco? Kad̃e shid̃a benci.</button>
       <h1>Hi! This is my site!</h1>
       <section class='link-clicking-section'>
+        <h2>I have not been rickrolled for <span id="secsSinceRickrolled">LOADING</span> seconds</h2>
+        <script>
+          const pastDate = new Date("2026-06-26T13:30:00");
+          let currentDate = new Date();
+
+          // Difference in milliseconds
+          let msPassed = currentDate - pastDate; 
+          setInterval(function() {
+            currentDate = new Date();
+            msPassed = currentDate - pastDate; 
+            document.getElementById("secsSinceRickrolled").innerText = (Math.floor(msPassed/10)/100);
+          }, 30);
+        </script>
         <h3>Click these links!</h3>
         <a href='https://scratch.mit.edu/users/Meower-Pro'><button>Scratch profile</button></a>
         <a href='https://conworkshop.com/view_language.php?l=CEHP'><button>Latin Catlanian page</button></a>
