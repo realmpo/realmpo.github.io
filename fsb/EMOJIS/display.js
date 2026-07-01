@@ -1,7 +1,5 @@
 const emojiMap = {
-    '::scratchcat': ['/emojis/__scratchcat.png', 'Scratch Cat from Scratch.', '#f8a61c'],
-    '::cat': ['/emojis/__cat.png', 'A little cuddly cat emoji that can only be found in https://meower-pro.neocities.org.', '#916314'],
-    '::angilon': ['/emojis/__angilon.png', 'Angilon Official logo.', '#0259d7']
+    '::bee': ['/fsb/emojis/__scratchcat.png', 'Scratch Cat from Scratch.', '#f8a61c'],
 };
 
 // 2. The Regex (Handles optional \ and double-colon code)
