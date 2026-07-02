@@ -1,5 +1,5 @@
 const emojiMap = {
-    '::bee': ['/fsb/emojis/__scratchcat.png', 'Scratch Cat from Scratch.', '#f8a61c'],
+    '::bee': ['/fsb/emojis/C_bee.png', 'The official FSB bee emoji!', '#f8a61c'],
 };
 
 // 2. The Regex (Handles optional \ and double-colon code)
