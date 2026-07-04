@@ -13,5 +13,5 @@ Angilon is a programming language I made. Learn more about it [LINK WORK IN PROG
 # Fire Spelling Bee
 [Go to the Fire Spelling Bee](https://realmpo.github.io/fsb/)
 
-[^angilon]: Angilon is a programming language I made. See it [here](https://meower-pro-official.github.io/ANGILON).
+[^angilon]: Angilon is a programming language I made. See it [here](https://realmpo.github.io/ANGILON).
 [^ceh]: Latin Catlanian is a language that I made. See it [here](https://conworkshop.com/view-lang.php?l=cehp).
