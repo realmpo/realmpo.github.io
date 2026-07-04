@@ -4,7 +4,8 @@ This is my website. It has some features. Here are the things I am **working on*
 | :---: | :---: | :---: |
 | Homepage | website homepage? | Working on forever :) |
 | [Angilon](#angilon)[^angilon] | programming language | Working on |
-| Latin Catlanian[^ceh] support | language support | Homepage only|
+| Latin Catlanian[^ceh] support | language support | Homepage only currently |
+| Fire Spelling Bee | website megacollab | Working on a lot |
 
 # Angilon
 Angilon is a programming language I made. Learn more about it [LINK WORK IN PROGRESS]().
