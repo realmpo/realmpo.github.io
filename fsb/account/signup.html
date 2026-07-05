@@ -27,7 +27,11 @@
 <body>
 
   <h1>Join the <span style="color: mediumturquoise;" id="num_accounts_registered">...</span> people on the the Fire Spelling Bee.</h1>
-  <div class="spacer"></div>
+  <div class="signup">
+    Username: <input id="username" placeholder="3-24 characters, all letters and _ - only">
+    Display Name: <input id="displayname" placeholder="Everyone can see this">
+
+  </div>
     <script>
          document.querySelector('.beehive-grid').addEventListener('click', (event) => {
             const targetButton = event.target.closest('.data-btn');
