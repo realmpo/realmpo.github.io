@@ -28,21 +28,10 @@
 
   <h1>Join the <span style="color: mediumturquoise;" id="num_accounts_registered">...</span> people on the Fire Spelling Bee.</h1>
   <div class="signup">
-    Username: <input id="username" placeholder="3-24 characters, all letters and _ - only">
-    Display Name: <input id="displayname" placeholder="Everyone can see this">
+    Username: <input id="username" style="min-width: 235px; border-radius: 40px; background-color: #e34424;" placeholder="3-24 characters, all letters and _ - only."><br>
+    Display Name: <input id="displayname" style="max-width: 140px; border-radius: 40px; background-color: #e34424;" placeholder="Everyone can see this!">
 
   </div>
-    <script>
-         document.querySelector('.beehive-grid').addEventListener('click', (event) => {
-            const targetButton = event.target.closest('.data-btn');
-            if (!targetButton) return;
-
-            const buttonId = targetButton.getAttribute('data-id');
-            console.log(`Beehive Hexagon #${buttonId} clicked!`);
-            alert(`Triggered action for button ${buttonId}`);
-        });
-    </script>
-
     </div>
 
     <script>
