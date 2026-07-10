@@ -28,5 +28,20 @@
     "word": "dog",
     "def": "A canine animal similar to a cat that instead makes a \"bark\" sound that sounds like \"woof\".",
     "diff": 1.057
+  },
+  {
+    "word": "fog",
+    "def": "A cloud on the ground, usually at high places",
+    "diff": 1.093
+  },
+  {
+    "word": "herb",
+    "def": "A type of plant that can only be green and produces seeds and dies usally at the end of spring or early summer.",
+    "diff": 2.31
+  },
+  {
+    "word": "foul",
+    "def": "Usually refers to a mean person who hurt the speaker physically or emotionally.",
+    "diff": 2.59
   }
 ]
