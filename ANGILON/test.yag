@@ -1,0 +1,26 @@
+v variable = "Hello World!" ## Create a variable of any type
+
+v variable2 flt = 1.2 ## Sets a float variable. Setting this to 4 or "Hello World" will cause a TypeError, while setting it to 7.2 later will work normally.
+
+v greeting str = "Hello" ## String variable
+
+v name = input.str("What's your name?:") ## Get input from the user
+
+pline(":{greeting}, :{name}!")
+
+pline("Use \:{variable name} to add variables to strings!") ## The backslash (\) is an escape character!
+
+
+### This is a multi-line comment.
+It starts and ends with triple-hashtags.
+
+pline("Hello") ## This will not execute + double hashtags work fine
+pline("This doesnt execute!")
+###
+
+iprt color ## Both "color" and "colour" are the exact same.
+
+pline("Hello", color.col("green")) ## Green text
+
+pline("Look at this color!", color.col(color.hex("#639dc9")))
+pline("Same color!", color.col([99, 157, 201]))
