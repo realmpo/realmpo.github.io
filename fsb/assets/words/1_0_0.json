@@ -1,0 +1,32 @@
+[
+  {
+    "word": "a",
+    "def": "Before the singular of an object that starts with a consonant.",
+    "diff": 1.00
+  },
+  {
+    "word": "I",
+    "def": "To refer to the person who is speaking or writing.",
+    "diff": 1.03
+  },
+  {
+    "word": "an",
+    "def": "Before the singular of an object that starts with a vowel.",
+    "diff": 1.00
+  },
+  {
+    "word": "the",
+    "def": "Before any amount of an object that starts with any letter.",
+    "diff": 1.00
+  },
+  {
+    "word": "cat",
+    "def": "A feline animal with four legs and a tail that is fluffy and commonly does an action called purring and makes a \"meow\" sound.",
+    "diff": 1.06
+  },
+  {
+    "word": "dog",
+    "def": "A canine animal similar to a cat that instead makes a \"bark\" sound that sounds like \"woof\".",
+    "diff": 1.057
+  }
+]
