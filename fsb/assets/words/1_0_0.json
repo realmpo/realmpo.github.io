@@ -52,7 +52,7 @@
       "word": "foul",
       "def": "Usually refers to a object or action that is offensive to the speaker.",
       "diff": 2.59,
-      "ex": "He was foul and mean yesterday."
+      "ex": "The referee called a foul at the game."
     },
     { 
       "word": "dynasty",
@@ -76,9 +76,9 @@
       "word": "calibration",
       "def": "The process of configuring a device to increase its accuracy.",
       "diff": 3.72,
-      "ex": "The thermometer needed calibration before used."
+      "ex": "The thermometer needed calibration before use."
     }
   ],
   "dict-version": "1.0.0.030",
-  "last-updated": "2026-07-11 11:19"
+  "last-updated": "2026-07-11 11:20"
 }
