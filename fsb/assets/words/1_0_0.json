@@ -50,7 +50,7 @@
     },
     {
       "word": "foul",
-      "def": "Usually refers to a mean person who hurt the speaker physically or emotionally.",
+      "def": "Usually refers to a object or action that is offensive to the speaker.",
       "diff": 2.59,
       "ex": "He was foul and mean yesterday."
     },
@@ -80,5 +80,5 @@
     }
   ],
   "dict-version": "1.0.0.030",
-  "last-updated": "2026-07-11 11:18"
+  "last-updated": "2026-07-11 11:19"
 }
