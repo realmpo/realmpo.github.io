@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat - MPO</title>
+    <style>
+      body {
+        font-family: monospace, sans-serif;
+        background-color: #150638;
+        color: #beccd8;
+      }
+      #select-server {
+        background-color: #141069;
+        border-radius: 32px;
+        padding: 32px;
+      }
+      #select-server button {
+        transition: 0.36s;
+        background-color: #1a0f4c;
+        color: #beccd8;
+        border: none;
+        padding: 8px 16px;
+        margin: 4px 0;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+      #select-server button:hover {
+        transition: 0.36s;
+        background-color: #523dc8;
+        font-weight: bold;
+        font-size: 1.1em;
+
+      }
+      .loginsignup {
+        transition: 0.36s;
+        background-color: #1a0f4c;
+        color: #beccd8;
+        border: none;
+        padding: 8px 16px;
+        margin: 4px 0;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+      .loginsignup:hover {
+        transition: 0.36s;
+        background-color: #523dc8;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Chat - MPO</h1>
+    <div id="select-server">
+      <button id="#main" onclick="selectChatServer('#general')">General</button><br>
+      <button id="#help" onclick="selectChatServer('#help')">Help</button><br>
+      <button id="#random" onclick="selectChatServer('#random')">Suggestions</button><br>
+      <div id="admin-servers">
+        <h3>Admin Servers</h3>
+        <button id="admin#1" onclick="selectChatServer('admin#general')">Admin Chat</button><br>
+        <button id="admin#2" onclick="selectChatServer('admin#firesb')">Fire Spelling Bee</button><br>
+      </div>
+      <h3>User-created servers<br>Most Popular</h3>
+      
+      <button id="user#1" onclick="selectChatServer('user#1')">Server 1</button><br>
+      <button id="user#2" onclick="selectChatServer('user#2')">Server 2</button><br>
+      
+    </div>
+    <button class="loginsignup" onclick="logIn()">Log In</button> or <button class="loginsignup" onclick="signUp()">Sign Up</button>
+  </body>
+</html>

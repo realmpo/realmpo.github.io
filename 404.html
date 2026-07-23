@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Redirecting...</title>
+    <script type="text/javascript">
+        // 1. Capture the exact path the user tried to visit
+        var pathSegmentsToKeep = 0; // Set to 1 if using a project repository like username.github.io/repo-name/
+        
+        var l = window.location;
+        // 2. Redirect back to index.html, packing the intended route into a special query string
+        l.replace(
+            l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+            l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?p=' +
+            l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+            (l.search ? '&q=' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+            l.hash
+        );
+    </script>
+</head>
+<body>
+    Loading dynamic page...
+</body>
+</html>
