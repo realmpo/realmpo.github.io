@@ -77,8 +77,20 @@
       "def": "The process of configuring a device to increase its accuracy.",
       "diff": 3.72,
       "ex": "The thermometer needed calibration before use."
+    },
+    { 
+      "word": "exhausted",
+      "def": "Tired in a way",
+      "diff": 3.79,
+      "ex": "He was very exhausted today."
+    },
+    { 
+      "word": "extinguished",
+      "def": "",
+      "diff": 3.68,
+      "ex": ""
     }
   ],
-  "dict-version": "1.0.0.034",
-  "last-updated": "2026-07-11 11:20"
+  "dict-version": "1.0.0.037",
+  "last-updated": "2026-07-24 16:55"
 }
