@@ -72,6 +72,16 @@
         return outputArray;
       }
 
+      async function triggerPushNotification() {
+        await fetch('https://supabase.co', {
+          method: 'POST',
+          headers: {
+            'Authorization': 'Bearer YOUR_SUPABASE_ANON_KEY',
+            'Content-Type': 'application/json'
+          }
+        });
+      }
+
     </script>
   </body>
 </html>
