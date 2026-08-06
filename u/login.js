@@ -86,7 +86,7 @@ async function finishRegistration() {
     // Entire registration chain successfully resolved
     document.getElementById("log-in-section").innerHTML = `
       <h1>Account Initialized!</h1>
-      <button onclick="if (params.get("n")) {window.location.replace(params.get("n"));}">Click to go back</button>
+      <button onclick="if (!(params.get(&quot;r&quot;).length=0)) {window.location.replace(params.get(&quot;r&quot;));}">Click to go back</button>
     `;
 
   } catch (error) {
