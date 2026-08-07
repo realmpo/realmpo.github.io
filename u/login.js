@@ -83,15 +83,25 @@ async function finishRegistration() {
       throw new Error(dbError.message || "Failed to inject row into Meower-ProX_Accounts table.");
     }
 
+    
+
     // Entire registration chain successfully resolved
     document.getElementById("log-in-section").innerHTML = `
       <h1>Account Initialized!</h1>
-      <button onclick="if (!(params.get(&quot;r&quot;).length=0)) {window.location.replace(params.get(&quot;r&quot;));}">Click to go back</button>
+      <button onclick="if (!(params.get(&quot;r&quot;).length=0)) {window.location.replace(\`\${params.get(&quot;r&quot;)}${getEnding(cAccDet.uname)}\`)}">Click to go back</button>
     `;
 
   } catch (error) {
     alert("Registration error: " + error.message);
     page = 1; 
     createAccount(); // Revert back safely to step 1
+  }
+}
+
+function getEnding(username) {
+  if (params.get("r").includes("?")) {
+    return `&accountusername=${username}`
+  } else {
+    return `?accountusername=${username}`
   }
 }
