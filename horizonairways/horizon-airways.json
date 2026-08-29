@@ -5,9 +5,37 @@
     "2": {
       "liveries": [
         {
-          "name": "Horizon Airways HZA001 Flagship",
+          "name": "Horizon Airways HZA001 A320 Flagship",
           "texture": [
-            "https://i.ibb.co/hJX8rbKJ/horizon-airways-geofs-livery.png"
+            "https://realmpo.github.io/horizonairways/liveries/A320-232/001.png"
+          ]
+        },
+        {
+          "name": "Horizon Airways HZA002 A320 Flagship",
+          "texture": [
+            "https://realmpo.github.io/horizonairways/liveries/A320-232/002.png"
+          ]
+        },
+        {
+          "name": "Horizon Airways HZA003 A320 Flagship",
+          "texture": [
+            "https://realmpo.github.io/horizonairways/liveries/A320-232/003.png"
+          ]
+        },
+        {
+          "name": "Horizon Airways HZA004 A320 Flagship",
+          "texture": [
+            "https://realmpo.github.io/horizonairways/liveries/A320-232/004.png"
+          ]
+        }
+      ]
+    },
+    "13": {
+      "liveries": [
+        {
+          "name": "Horizon Airways HZA001 B737 Regional",
+          "texture": [
+            "https://realmpo.github.io/horizonairways/liveries/737-700/001.png"
           ]
         }
       ]
