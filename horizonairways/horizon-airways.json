@@ -1,6 +1,8 @@
 {
   "name": "Horizon Airways",
   "icao": "HZA",
+  "color": "cyan",
+  "bgcolor": "darkblue",
   "aircraft": {
     "2": {
       "liveries": [
