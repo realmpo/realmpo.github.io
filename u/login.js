@@ -11,7 +11,9 @@ if (params.get("n")) {
 let page = 1;
 let cAccDet = {};
 
-function logIn() {}
+function logIn() {
+  
+}
 
 // 3. Optimized Multi-Step Form Wizard
 function createAccount() {

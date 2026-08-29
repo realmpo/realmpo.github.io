@@ -1,0 +1,16 @@
+{
+  "name": "Horizon Airways",
+  "icao": "HZA",
+  "aircrafts": {
+    "2": {
+      "liveries": [
+        {
+          "name": "Horizon Airways HZA001 Flagship",
+          "texture": [
+            "https://i.ibb.co/hJX8rbKJ/horizon-airways-geofs-livery.png"
+          ]
+        }
+      ]
+    }
+  }
+}
