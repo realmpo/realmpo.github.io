@@ -64,7 +64,7 @@ List work in progress!
 
 ## Members
 
-> * indicates **you can change this at any time**
+> \* indicates **you can change this at any time**
 
 | Chosen name* | Github username* | Rank | Group |
 | --- | --- | --- | --- |
