@@ -68,6 +68,6 @@ List work in progress!
 
 | Chosen name* | Github username* | Rank | Group |
 | --- | --- | --- | --- |
-| MPO | realmpo, realmpo2 (+10 organizations) | 702 |
+| MPO | realmpo, realmpo2 (+10 organizations) | 702 | - |
 
 We are currently [hiring](#hiring)!
